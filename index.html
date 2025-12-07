@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MyRestaurant — Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Semantic header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="MyRestaurant logo" />
+        <div>
+          <h1>KamatRestaurant</h1>
+          <p class="tag">Delicious food — Fresh & Fast</p>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button id="btn-menu" class="nav-btn">Menu</button>
+        <button id="btn-orders" class="nav-btn">Orders (<span id="orders-count">0</span>)</button>
+        <button id="btn-contact" class="nav-btn">Contact</button>
+      </nav>
+
+      <div class="header-actions">
+        <input id="search" class="search" placeholder="Search menu..." aria-label="Search menu">
+        <button id="btn-view-cart" class="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Semantic main -->
+  <main class="site-main container">
+    <!-- hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-left">
+        <h2>Welcome to MyRestaurant</h2>
+        <p>Order your favourite meals from our curated menu. Tap add to cart and place your order instantly.</p>
+      </div>
+      <div class="hero-right">
+        <img src="images.jpg" alt="Delicious food on table">
+      </div>
+    </section>
+
+    <!-- main content: menu + cart -->
+    <section class="content-grid">
+      <section class="menu-section" id="menu-section">
+        <h2>Menu</h2>
+        <div id="menu-list" class="menu-list" aria-live="polite"></div>
+      </section>
+
+      <aside class="cart-section" id="cart-section">
+        <h3>Your Cart</h3>
+        <ul id="cart-list" class="cart-list" aria-live="polite"></ul>
+
+        <div class="cart-summary">
+          <div>Subtotal: <strong>₹<span id="subtotal">0.00</span></strong></div>
+          <div>GST (5%): <strong>₹<span id="tax">0.00</span></strong></div>
+          <div class="total">Total: <strong>₹<span id="total">0.00</span></strong></div>
+        </div>
+
+        <div class="cart-actions">
+          <input id="cust-name" placeholder="Customer name (optional)" />
+          <div class="cart-buttons">
+            <button id="place-order" class="primary">Place Order</button>
+            <button id="clear-cart" class="muted">Clear Cart</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- features -->
+    <section class="features" aria-label="Why choose us">
+      <article class="feat">
+        <img src="images (1).jpg" alt="Fresh ingredients">
+        <h4>Fresh Ingredients</h4>
+        <p>We use fresh produce everyday.</p>
+      </article>
+      <article class="feat">
+        <img src="https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=400&q=60&auto=format&fit=crop" alt="Fast delivery">
+        <h4>Fast Delivery</h4>
+        <p>Hot & on-time deliveries.</p>
+      </article>
+      <article class="feat">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=60&auto=format&fit=crop" alt="Tasty recipes">
+        <h4>Delicious Taste</h4>
+        <p>Recipes loved by everyone.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- orders modal (shows placed orders) -->
+  <div id="orders-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Orders">
+    <div class="modal-content">
+      <div class="modal-head">
+        <h3>Orders</h3>
+        <button class="close-modal" data-target="orders-modal" aria-label="Close orders">✕</button>
+      </div>
+      <div id="orders-list" class="orders-list"></div>
+    </div>
+  </div>
+
+  <!-- footer (semantic) -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> KamatRestaurant</div>
+      <div class="socials">Contact: +91 8707331585 &nbsp; • &nbsp; Kamatrestaurant@gmail.com</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
